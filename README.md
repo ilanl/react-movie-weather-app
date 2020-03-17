@@ -9,16 +9,11 @@ Our app should introduce movie details and the weather.
 
 ## Weather (WeatherMap)
 
-● Site: https://openweathermap.org/api
-● Api key: c2152ce33eec94f628bcb40cda3da446
-● Sample api call:
-http://api.openweathermap.org/data/2.5/weather?q=London,uk&APPI
-D=<API_KEY>
+- Site: https://openweathermap.org/api
+http://api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=<API_KEY>
 
 ## Movie (OMDB)
-● Site: http://www.omdbapi.com/
-● Api key: dce24c91
-● Sample api call:
+- Site: http://www.omdbapi.com/
 http://www.omdbapi.com/?i=tt3896198&apikey=<API_KEY>
 
 ## Available Scripts
@@ -43,7 +38,3 @@ netlify deploy --prod
 ## Weather Indicator
 
 Using useInterval and usePosition hooks to trigger update on location change or timer.
-
-
-
-
