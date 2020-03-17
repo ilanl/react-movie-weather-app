@@ -1,17 +1,17 @@
 import axios from "axios";
 
-let apiKey;
+let omdbKey;
 
 if (process.env.NODE_ENV !== "production") {
-  apiKey = process.env.REACT_APP_OMDB_API_KEY;
+  omdbKey = process.env.REACT_APP_OMDB_KEY;
 } else {
-  apiKey = process.env.OMDB_API_KEY;
+  omdbKey = process.env.OMDB_KEY;
 }
 
 export const getMovieById = async id => {
   // Example: http://www.omdbapi.com/?i=tt3896198&apikey=dce24c91
   const {data} = await axios.get(
-    `https://www.omdbapi.com/?i=${id}&apikey=${apiKey}&plot=full`
+    `https://www.omdbapi.com/?i=${id}&apikey=${omdbKey}&plot=full`
   );
   if (data.Error) {
     return null;
@@ -22,7 +22,7 @@ export const getMovieById = async id => {
 export const searchMovies = async text => {
   // Example: http://www.omdbapi.com/?s=guardians&apikey=dce24c91
   const {data} = await axios.get(
-    `https://www.omdbapi.com/?s=${text}&apikey=${apiKey}`
+    `https://www.omdbapi.com/?s=${text}&apikey=${omdbKey}`
   );
   if (data.Error) {
     return [];

@@ -3,12 +3,12 @@ import axios from "axios";
 // TODO: Resolve the temp unit by user locale ?
 // api.openweathermap.org/data/2.5/weather?units=metric&lat=35&lon=139&APPID=c2152ce33eec94f628bcb40cda3da446
 
-let apiKey;
+let weatherKey;
 
 if (process.env.NODE_ENV !== "production") {
-  apiKey = process.env.REACT_APP_WEATHER_MAP_API_KEY;
+  weatherKey = process.env.REACT_APP_WEATHER_MAP_KEY;
 } else {
-  apiKey = process.env.WEATHER_MAP_API_KEY;
+  weatherKey = process.env.WEATHER_MAP_KEY;
 }
 
 const getIconCode = icon => {
@@ -38,7 +38,7 @@ const getIconCode = icon => {
 export const getWeatherDataByCoords = async (lat, lng, units = "metric") => {
   try {
     const {data} = await axios.get(
-      `https://api.openweathermap.org/data/2.5/weather?units=${units}&lat=${lat}&lon=${lng}&APPID=${apiKey}`
+      `https://api.openweathermap.org/data/2.5/weather?units=${units}&lat=${lat}&lon=${lng}&APPID=${weatherKey}`
     );
     const {
       weather,
