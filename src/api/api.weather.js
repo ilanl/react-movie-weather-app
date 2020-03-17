@@ -38,7 +38,7 @@ const getIconCode = icon => {
 export const getWeatherDataByCoords = async (lat, lng, units = "metric") => {
   try {
     const {data} = await axios.get(
-      `http://api.openweathermap.org/data/2.5/weather?units=${units}&lat=${lat}&lon=${lng}&APPID=${apiKey}`
+      `https://api.openweathermap.org/data/2.5/weather?units=${units}&lat=${lat}&lon=${lng}&APPID=${apiKey}`
     );
     const {
       weather,

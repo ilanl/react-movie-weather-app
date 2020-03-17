@@ -11,7 +11,7 @@ if (process.env.NODE_ENV !== "production") {
 export const getMovieById = async id => {
   // Example: http://www.omdbapi.com/?i=tt3896198&apikey=dce24c91
   const {data} = await axios.get(
-    `http://www.omdbapi.com/?i=${id}&apikey=${apiKey}&plot=full`
+    `https://www.omdbapi.com/?i=${id}&apikey=${apiKey}&plot=full`
   );
   if (data.Error) {
     return null;
@@ -22,7 +22,7 @@ export const getMovieById = async id => {
 export const searchMovies = async text => {
   // Example: http://www.omdbapi.com/?s=guardians&apikey=dce24c91
   const {data} = await axios.get(
-    `http://www.omdbapi.com/?s=${text}&apikey=${apiKey}`
+    `https://www.omdbapi.com/?s=${text}&apikey=${apiKey}`
   );
   if (data.Error) {
     return [];
